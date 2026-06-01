@@ -4,11 +4,12 @@
   --cyan: #00f0ff;
   --cyan-dim: #00dbe9;
   --gold: #fed639;
-  --bg: #0d1515;
+  --bg: #000000;
   --surface: #192122;
   --border: #3b494b;
   --text: #dce4e5;
   --text-muted: #b9cacb;
+  
 }
 
 * {

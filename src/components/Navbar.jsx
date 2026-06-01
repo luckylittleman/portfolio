@@ -7,7 +7,7 @@ function Navbar({ currentPage, onNavigate }) {
 
   return (
     <nav style={{
-      backgroundColor: 'rgba(13, 21, 21, 0.85)',
+      backgroundColor: 'rgba(10, 10, 15)',
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid #3b494b',
       position: 'sticky',
@@ -21,23 +21,10 @@ function Navbar({ currentPage, onNavigate }) {
         height: '64px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
       }} className="px-4 md:px-16">
 
-        {/* Logo */}
-        <div
-          onClick={() => onNavigate('Home')}
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '12px',
-            letterSpacing: '0.1em',
-            color: '#dce4e5',
-            cursor: 'pointer',
-            fontWeight: '700',
-          }}
-        >
-          <span style={{ color: '#00f0ff' }}></span>Luckylittleman
-        </div>
+        
 
         {/* Desktop Links */}
         <div className="hidden md:flex" style={{ gap: '32px', alignItems: 'center' }}>
@@ -49,8 +36,8 @@ function Navbar({ currentPage, onNavigate }) {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: '12px',
                 letterSpacing: '0.1em',
-                color: currentPage === link ? '#b1edf3' : '#b9cacb',
-                borderBottom: currentPage === link ? '2px solid #00f0ff' : '2px solid transparent',
+                color: currentPage === link ? '#ffffff' : '#b9cacb',
+                borderBottom: currentPage === link ? '2px solid #ffffff' : '2px solid transparent',
                 paddingBottom: '2px',
                 cursor: 'pointer',
                 transition: 'color 0.2s',

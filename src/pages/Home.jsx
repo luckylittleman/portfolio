@@ -1,3 +1,4 @@
+
 function Home() {
   return (
     <main style={{
@@ -22,7 +23,7 @@ function Home() {
             <span style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '14px',
-              color: '#00f0ff',
+              color: '#ffffff',
               display: 'block',
               marginBottom: '16px',
             }}>
@@ -32,7 +33,7 @@ function Home() {
               fontFamily: "'Inter', sans-serif",
               fontSize: 'clamp(32px, 5vw, 48px)',
               fontWeight: '700',
-              color: '#dce4e5',
+              color: '#ffffff',
               lineHeight: '1.1',
               letterSpacing: '-0.02em',
               margin: 0,
@@ -44,7 +45,7 @@ function Home() {
           </div>
 
           <p style={{
-            color: '#b9cacb',
+            color: 'rgba(255, 255, 255, 0.7)',
             fontSize: '16px',
             lineHeight: '1.6',
             maxWidth: '480px',
@@ -54,37 +55,70 @@ function Home() {
           </p>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <button style={{
-              backgroundColor: '#ffffff',
-              color: '#003336',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '12px',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              padding: '12px 24px',
-              border: 'none',
-              borderRadius: '2px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}>
+            {/* Primary Button */}
+            <button 
+              style={{
+                backgroundColor: '#6366f1',
+                color: '#ffffff',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px',
+                fontWeight: '600',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                padding: '12px 24px',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: 'translateY(0)',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-4px)'
+                e.currentTarget.style.backgroundColor = '#818cf8'
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(99, 102, 241, 0.25)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.backgroundColor = '#6366f1'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
               View Projects
-              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
+              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}></span>
             </button>
 
-            <button style={{
-              backgroundColor: 'transparent',
-              color: '#00f0ff',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '12px',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              padding: '12px 24px',
-              border: '1px solid #00f0ff',
-              borderRadius: '2px',
-              cursor: 'pointer',
-            }}>
+            {/* Secondary Button */}
+            <button 
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                color: '#ffffff',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                padding: '12px 24px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: 'translateY(0)',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-4px)'
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(255, 255, 255, 0.05)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
+            >
               Contact Me
             </button>
           </div>
@@ -102,25 +136,25 @@ function Home() {
           <div style={{
             position: 'absolute', inset: 0,
             borderRadius: '50%',
-            border: '1px solid rgba(59,73,75,0.4)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
             animation: 'pulse 3s ease-in-out infinite',
           }} />
           <div style={{
             position: 'absolute', inset: '32px',
             borderRadius: '50%',
-            border: '1px dashed rgba(0,240,255,0.2)',
+            border: '1px dashed rgba(99, 102, 241, 0.3)',
             animation: 'spinSlow 20s linear infinite',
           }} />
           <div style={{
             position: 'absolute', inset: '64px',
             borderRadius: '50%',
-            border: '1px solid rgba(59,73,75,0.4)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
             animation: 'spinSlowRev 15s linear infinite',
           }} />
           <div style={{
             width: '112px', height: '112px',
-            backgroundColor: '#0d1515',
-            border: '1px solid #3b494b',
+            backgroundColor: 'rgba(255, 255, 255, 0.02)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
             borderRadius: '8px',
             display: 'flex',
             alignItems: 'center',
@@ -130,10 +164,10 @@ function Home() {
           }}>
             <span className="material-symbols-outlined" style={{
               fontSize: '56px',
-              color: '#00f0ff',
+              color: '#6366f1',
               fontVariationSettings: "'FILL' 0",
             }}>
-              data_object
+              picha yangu bwana
             </span>
           </div>
         </div>
@@ -145,57 +179,62 @@ function Home() {
           fontFamily: "'Inter', sans-serif",
           fontSize: '24px',
           fontWeight: '600',
-          color: '#dce4e5',
+          color: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
           margin: 0,
         }}>
-          <span className="material-symbols-outlined" style={{ color: '#00f0ff' }}>code_blocks</span>
+          <span className="material-symbols-outlined" style={{ color: '#6366f1' }}></span>
           Technical Expertise
         </h2>
 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '24px',
+          gap: '12px',
         }}>
           {[
             {
-              icon: 'terminal',
+              
               title: 'Languages',
               items: ['Python', 'JavaScript', 'SQL', 'React', 'HTML/CSS', 'Java'],
             },
             {
-              icon: 'dns',
+             
               title: 'Backend & Infrastructure',
               items: ['FastAPI', 'PostgreSQL', 'Docker', 'Kubernetes', 'Django', 'MySQL'],
             },
             {
-              icon: 'memory',
+             
               title: 'Machine Learning',
               items: ['PyTorch', 'Scikit-learn', 'TensorFlow', 'MLflow', 'Numpy', 'Pandas'],
             },
+            {
+              
+              title: 'Tools & Environment',
+              items: ['Ubuntu / Linux', 'Git / GitHub', 'SSH Hardening', 'Wireshark', 'Nmap', 'WSL'],
+            }
           ].map((card, i) => (
             <div key={i} style={{
-              backgroundColor: '#192122',
-              border: '1px solid #2e3637',
+              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               borderRadius: '8px',
               padding: '32px',
               transition: 'border-color 0.25s',
             }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = '#ffffff'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = '#2e3637'}
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
             >
               <h3 style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: '12px',
                 letterSpacing: '0.1em',
-                color: '#b9cacb',
+                color: 'rgba(255, 255, 255, 0.6)',
                 textTransform: 'uppercase',
                 marginBottom: '24px',
                 paddingBottom: '16px',
-                borderBottom: '1px solid #2e3637',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -208,9 +247,9 @@ function Home() {
                   <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <span style={{
                       width: '8px', height: '8px', borderRadius: '50%', flexShrink: 0,
-                      backgroundColor: j === 0 ? '#849495' : j === 1 ? '#849495' : '#849495',
+                      backgroundColor: 'rgba(255, 255, 255, 0.3)',
                     }} />
-                    <span style={{ color: '#dce4e5', fontSize: '16px' }}>{item}</span>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px' }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -219,6 +258,8 @@ function Home() {
         </div>
       </section>
 
+      
+
       {/* Featured Work */}
       <section style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
@@ -226,26 +267,26 @@ function Home() {
             fontFamily: "'Inter', sans-serif",
             fontSize: '24px',
             fontWeight: '600',
-            color: '#dce4e5',
+            color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
             margin: 0,
           }}>
-            <span className="material-symbols-outlined" style={{ color: '#00f0ff' }}>folder_open</span>
+            <span className="material-symbols-outlined" style={{ color: '#6366f1' }}></span>
             Featured Work
           </h2>
           <span style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '14px',
-            color: '#b9cacb',
+            color: 'rgba(255, 255, 255, 0.6)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             gap: '4px',
           }}>
             View All
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}></span>
           </span>
         </div>
 
@@ -256,28 +297,28 @@ function Home() {
         }}>
           {[
             {
-              icon: 'query_stats',
-              title: 'Distributed Log Analytics Engine',
-              desc: 'High-throughput distributed system to process and index terabytes of log data in real-time. Built using Rust for core processing and FastAPI for the query interface.',
-              stack: ['Rust', 'FastAPI', 'Kafka'],
+              icon: 'school',
+              title: 'Student Dropout Predictor',
+              desc: 'A custom neural network built from scratch using NumPy to predict student attrition, served via a high-performance FastAPI backend.',
+              stack: ['Python', 'NumPy', 'FastAPI'],
             },
             {
-              icon: 'psychology',
-              title: 'Semantic Search Pipeline',
-              desc: 'End-to-end semantic search leveraging fine-tuned transformer models. Custom vector quantization reduced index footprint by 40% while maintaining full recall.',
-              stack: ['PyTorch', 'Milvus', 'Transformers'],
+              icon: 'analytics',
+              title: 'Student Grade Predictor',
+              desc: 'A predictive modeling tool utilizing Multiple Linear Regression to forecast academic performance, achieving a highly accurate R-Squared score of 0.9887.',
+              stack: ['Scikit-learn', 'Regression', 'Pandas'],
             },
             {
-              icon: 'model_training',
-              title: 'Automated Model Deployment Platform',
-              desc: 'Internal tooling for ML model deployments — model registry, artifact versioning, and automatic Kubernetes resource provisioning.',
-              stack: ['Go', 'Kubernetes', 'MLflow'],
+              icon: 'web',
+              title: 'Modern Developer Portfolio',
+              desc: 'A responsive, dark-themed personal portfolio website built to showcase machine learning projects and full-stack development capabilities.',
+              stack: ['React', 'Vite', 'Tailwind CSS'],
             },
           ].map((project, i) => (
             <article key={i}
               style={{
-                backgroundColor: '#0d1515',
-                border: '1px solid #1e2a2b',
+                backgroundColor: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 display: 'flex',
@@ -286,26 +327,26 @@ function Home() {
                 transition: 'border-color 0.25s, box-shadow 0.25s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = '#ffffff'
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.07)'
+                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'
+                e.currentTarget.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.2)'
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#1e2a2b'
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
               {/* Card image area */}
               <div style={{
                 height: '160px',
-                backgroundColor: '#2e3637',
-                borderBottom: '1px solid #1e2a2b',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
                 <span className="material-symbols-outlined" style={{
                   fontSize: '56px',
-                  color: 'rgba(185,202,203,0.3)',
+                  color: 'rgba(255, 255, 255, 0.15)',
                   fontVariationSettings: "'FILL' 0",
                 }}>
                   {project.icon}
@@ -318,14 +359,14 @@ function Home() {
                   fontFamily: "'Inter', sans-serif",
                   fontSize: '20px',
                   fontWeight: '600',
-                  color: '#dce4e5',
+                  color: '#ffffff',
                   marginBottom: '12px',
                   marginTop: 0,
                 }}>
                   {project.title}
                 </h3>
                 <p style={{
-                  color: '#b9cacb',
+                  color: 'rgba(255, 255, 255, 0.7)',
                   fontSize: '15px',
                   lineHeight: '1.6',
                   flexGrow: 1,
@@ -339,8 +380,8 @@ function Home() {
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: '11px',
                       textTransform: 'uppercase',
-                      color: '#b9cacb',
-                      border: '1px solid #2e3637',
+                      color: 'rgba(255, 255, 255, 0.6)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
                       padding: '3px 8px',
                       borderRadius: '2px',
                     }}>
