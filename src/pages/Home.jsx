@@ -167,7 +167,7 @@ function Home() {
               color: '#6366f1',
               fontVariationSettings: "'FILL' 0",
             }}>
-              picha yangu bwana
+              
             </span>
           </div>
         </div>
