@@ -1,0 +1,260 @@
+const backendProjects = [
+  {
+    icon: 'storage',
+    title: 'Distributed Key-Value Store',
+    desc: 'A high-performance, fault-tolerant distributed key-value store implementing the Raft consensus algorithm for leader election and log replication. Optimized for low-latency reads in write-heavy environments.',
+    stack: ['Rust', 'gRPC', 'Raft'],
+  },
+  {
+    icon: 'hub',
+    title: 'Microservices Event Bus',
+    desc: 'A scalable event-driven architecture relying on Apache Kafka for async communication between Go microservices. Features distributed tracing and automated circuit breaking.',
+    stack: ['Go', 'Kafka', 'Docker'],
+  },
+  {
+    icon: 'lan',
+    title: 'High-Concurrency API Gateway',
+    desc: 'A lightweight, highly concurrent API gateway written in C++ handling rate limiting, authentication, and dynamic request routing with minimal overhead.',
+    stack: ['C++', 'Redis', 'Nginx'],
+  },
+  {
+    icon: 'query_stats',
+    title: 'Distributed Log Analytics Engine',
+    desc: 'High-throughput system that processes and indexes terabytes of log data in real-time. Core processing in Rust with a FastAPI query interface.',
+    stack: ['Rust', 'FastAPI', 'Kafka'],
+  },
+  {
+    icon: 'model_training',
+    title: 'Automated Model Deployment Platform',
+    desc: 'ML model registry with artifact versioning and automatic Kubernetes resource provisioning. Reduced deployment time from days to minutes.',
+    stack: ['Go', 'Kubernetes', 'MLflow'],
+  },
+]
+
+const mlProjects = [
+  {
+    icon: 'psychology',
+    title: 'Transformer-based Sentiment Analysis',
+    desc: 'Custom Transformer model trained on financial news data to predict market sentiment. Deployed as a scalable inference endpoint optimized via ONNX Runtime.',
+    stack: ['Python', 'PyTorch', 'ONNX'],
+  },
+  {
+    icon: 'troubleshoot',
+    title: 'Real-time Anomaly Detection',
+    desc: 'Ensemble model pipeline detecting network intrusions in real-time streaming data. Uses Apache Spark for distributed feature extraction and isolation forests for scoring.',
+    stack: ['Spark', 'Scikit-learn', 'Scala'],
+  },
+  {
+    icon: 'manage_search',
+    title: 'Semantic Search Pipeline',
+    desc: 'End-to-end semantic search with fine-tuned transformers. Custom vector quantization reduces index footprint by 40% while maintaining full recall.',
+    stack: ['PyTorch', 'Milvus', 'Transformers'],
+  },
+]
+
+function ProjectCard({ icon, title, desc, stack }) {
+  return (
+    <article
+      style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.02)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '8px',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        cursor: 'pointer',
+        transition: 'border-color 0.25s, box-shadow 0.25s',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'
+        e.currentTarget.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.2)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
+        e.currentTarget.style.boxShadow = 'none'
+      }}
+    >
+      {/* Card image area */}
+      <div style={{
+        height: '160px',
+        backgroundColor: 'rgba(255, 255, 255, 0.04)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <span className="material-symbols-outlined" style={{
+          fontSize: '56px',
+          color: 'rgba(255, 255, 255, 0.15)',
+          fontVariationSettings: "'FILL' 0",
+        }}>
+          {icon}
+        </span>
+      </div>
+
+      {/* Card body */}
+      <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <h3 style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: '18px',
+          fontWeight: '600',
+          color: '#ffffff',
+          marginBottom: '12px',
+          marginTop: 0,
+        }}>
+          {title}
+        </h3>
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.7)',
+          fontSize: '15px',
+          lineHeight: '1.6',
+          flexGrow: 1,
+          marginBottom: '24px',
+          margin: 0,
+          marginBottom: '24px',
+        }}>
+          {desc}
+        </p>
+
+        {/* Stack tags */}
+        <div style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+          paddingTop: '16px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+          marginTop: 'auto',
+        }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {stack.map((tag, i) => (
+              <span key={i} style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                color: 'rgba(255, 255, 255, 0.6)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                padding: '3px 8px',
+                borderRadius: '2px',
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* View Source button */}
+          <a href="#" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: '12px',
+            color: '#6366f1',
+            border: '1px solid #6366f1',
+            padding: '8px 16px',
+            borderRadius: '4px',
+            textDecoration: 'none',
+            transition: 'background 0.2s',
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>code</span>
+            View Source
+          </a>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+function SectionHeader({ icon, title, color = '#6366f1' }) {
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      paddingBottom: '16px',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+      marginBottom: '32px',
+    }}>
+      <span className="material-symbols-outlined" style={{ color }}>{icon}</span>
+      <h2 style={{
+        fontFamily: "'Inter', sans-serif",
+        fontSize: '24px',
+        fontWeight: '600',
+        color: '#ffffff',
+        margin: 0,
+      }}>
+        {title}
+      </h2>
+    </div>
+  )
+}
+
+function Projects() {
+  return (
+    <main style={{
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '80px 64px',
+    }} className="px-4 md:px-16">
+
+      {/* Page Header */}
+      <header style={{ marginBottom: '80px' }}>
+  <h1 style={{
+    fontFamily: "'Inter', sans-serif",
+    fontSize: 'clamp(32px, 5vw, 48px)',
+    fontWeight: '700',
+    color: '#ffffff',
+    letterSpacing: '-0.02em',
+    margin: 0,
+    marginBottom: '12px',
+  }}>
+    Technical Projects
+  </h1>
+  <p style={{
+    color: 'rgba(255, 255, 255, 0.7)',
+    fontSize: '16px',
+    lineHeight: '1.6',
+    maxWidth: '600px',
+    margin: 0,
+  }}>
+    A selection of backend systems and machine learning models focused on
+    distributed architecture, performance optimization, and scalable inference.
+  </p>
+</header>
+
+      {/* Backend Systems */}
+      <section style={{ marginBottom: '100px' }}>
+        <SectionHeader icon="dns" title="Backend Systems" color="#ffffff" />
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px',
+        }}>
+          {backendProjects.map((p, i) => (
+            <ProjectCard key={i} {...p} />
+          ))}
+        </div>
+      </section>
+
+      {/* Machine Learning */}
+      <section>
+        <SectionHeader icon="memory" title="Machine Learning" color="#ffffff" />
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px',
+        }}>
+          {mlProjects.map((p, i) => (
+            <ProjectCard key={i} {...p} />
+          ))}
+        </div>
+      </section>
+
+    </main>
+  )
+}
+
+export default Projects

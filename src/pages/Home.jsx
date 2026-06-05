@@ -1,5 +1,5 @@
 
-function Home() {
+function Home({onNavigate}) {
   return (
     <main style={{
       maxWidth: '1200px',
@@ -57,6 +57,7 @@ function Home() {
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             {/* Primary Button */}
             <button 
+              onClick={() => onNavigate('Projects')}
               style={{
                 backgroundColor: '#6366f1',
                 color: '#ffffff',
@@ -75,6 +76,7 @@ function Home() {
                 transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 'translateY(0)',
               }}
+            
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)'
                 e.currentTarget.style.backgroundColor = '#818cf8'
