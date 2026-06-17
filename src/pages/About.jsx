@@ -49,16 +49,14 @@ function About() {
               maxWidth: '600px',
               margin: 0,
             }}>
-              I'm Hilary, a software engineer focused on distributed systems and
-              machine learning infrastructure. My work involves designing APIs,
-              optimizing database queries, and deploying models that handle
-              production-scale traffic. I believe in clean code, rigorous
-              testing, and continuous learning.
+              I'm Hilary, a software engineer focused on backend architectures and
+              machine learning integrations. My work involves designing secure APIs,
+              optimizing database schemas, and building predictive models that solve complex analytical challenges. I believe in clean code, robust networking infrastructure, and continuous iteration.
             </p>
           </div>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <a href="#education" style={{
+            <a href="#experience" style={{
               backgroundColor: '#6366f1',
               color: '#ffffff',
               fontFamily: "'JetBrains Mono', monospace",
@@ -76,7 +74,9 @@ function About() {
               View Experience
               <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_downward</span>
             </a>
-            <a href="#" style={{
+            <a href="/Hilary Omondi CV.pdf"
+            download="Hilary_Omondi_CV.pdf"
+            style={{
               backgroundColor: 'transparent',
               color: '#ffffff',
               fontFamily: "'JetBrains Mono', monospace",
@@ -92,7 +92,7 @@ function About() {
               gap: '8px',
               transition: 'background 0.2s',
             }}>
-              Download Resume
+              Download CV
               <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>download</span>
             </a>
           </div>
@@ -110,10 +110,9 @@ function About() {
           gap: '24px',
         }}>
           {[
-            { label: 'Location', value: 'Kisumu, Kenya' },
-            
-            { label: 'Focus', value: 'Backend & Machine Learning' },
-            { label: 'Experience', value: '2+ Years' },
+            { label: 'Location', value: 'Kenya' },
+            { label: 'Focus', value: 'Backend & ML Engineering' },
+            { label: 'Status', value: 'Available for Roles' },
           ].map((stat, i) => (
             <div key={i}>
               <div style={{
@@ -129,20 +128,11 @@ function About() {
               <div style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: '14px',
-                color: stat.highlight ? '#6366f1' : 'rgba(255,255,255,0.85)',
+                color: 'rgba(255,255,255,0.85)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
               }}>
-                {stat.highlight && (
-                  <span style={{
-                    width: '8px', height: '8px',
-                    borderRadius: '50%',
-                    backgroundColor: '#6366f1',
-                    display: 'inline-block',
-                    animation: 'pulse 2s ease-in-out infinite',
-                  }} />
-                )}
                 {stat.value}
               </div>
             </div>
@@ -175,17 +165,11 @@ function About() {
         }}>
           {[
             {
-              period: '2022 — 2026',
+              period: 'Graduating Nov 2026',
               degree: 'B.S. Computer Science',
-              school: 'Kabarak University',
-              courses: ['Distributed Systems', 'Machine Learning', 'Database Design', 'Operating Systems'],
-            },
-            {
-              period: '2024',
-              degree: 'AWS Cloud Practitioner',
-              school: 'Amazon Web Services',
-              courses: ['Serverless', 'VPC & Security', 'High Availability'],
-            },
+              school: 'University Education',
+              courses: ['Predictive Regression Models', 'Database Management', 'Full-Stack Integration', 'Data Structures'],
+            }
           ].map((edu, i) => (
             <div key={i} style={{
               backgroundColor: 'rgba(255,255,255,0.03)',
@@ -244,7 +228,7 @@ function About() {
       </section>
 
       {/* Experience Timeline */}
-      <section style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      <section id="experience" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
         <h2 style={{
           fontFamily: "'Inter', sans-serif",
           fontSize: '24px',
@@ -274,29 +258,29 @@ function About() {
 
           {[
             {
-              role: 'Software Engineering Intern',
-              company: 'TechFlow Corp',
-              period: 'Summer 2024',
+              role: 'ICT Intern',
+              company: 'Kalanet Communications',
+              period: 'Internship Period',
               bullets: [
-                'Architected a microservice in Go handling real-time data ingestion at 10k+ events/sec.',
-                'Reduced query latency by 40% through PostgreSQL indexing optimizations.',
-                'Increased test coverage to 92% with comprehensive unit and integration tests.',
+                'Gained practical technical hands-on experience working directly inside an Internet Service Provider environment.',
+                'Assisted with core local network administration, hardware troubleshooting, and structural diagnostics.',
+                'Maintained logging records and monitored continuous server up-time architectures.',
               ],
-              stack: ['Go', 'PostgreSQL', 'Docker', 'gRPC'],
+              stack: ['Networking', 'Linux / Ubuntu', 'Infrastructure', 'Troubleshooting'],
               active: true,
             },
             {
-              role: 'ML Research Assistant',
-              company: 'University Vision Lab',
-              period: 'Jan 2024 — Jun 2024',
+              role: 'Full-Stack & ML Developer',
+              company: 'Independent / Academic Projects',
+              period: 'Ongoing',
               bullets: [
-                'Trained custom ResNet models for anomalous pattern detection in medical imagery.',
-                'Built data preprocessing pipelines in Python cleaning 50GB+ datasets.',
-                'Co-authored documentation on hyperparameter tuning methodologies.',
+                'Architected and implemented a high-accuracy Student Dropout Predictor using Multiple Linear Regression models integrated with FastAPI.',
+                'Built responsive layout systems in React and Tailwind CSS connected to backend server schemas.',
+                'Migrated core local operating configurations completely into a standardized standalone Linux deployment pipeline.',
               ],
-              stack: ['Python', 'PyTorch', 'NumPy'],
+              stack: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Tailwind CSS'],
               active: false,
-            },
+            }
           ].map((job, i) => (
             <div key={i} style={{ position: 'relative', marginBottom: '48px' }}>
               {/* Dot */}
@@ -395,121 +379,8 @@ function About() {
         </div>
       </section>
 
-      {/* Research & Publications */}
-      <section style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-        <h2 style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '24px',
-          fontWeight: '600',
-          color: '#ffffff',
-          margin: 0,
-          paddingBottom: '16px',
-          borderBottom: '1px solid rgba(255,255,255,0.1)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-        }}>
-          <span className="material-symbols-outlined" style={{ color: '#6366f1' }}>article</span>
-          Research & Publications
-        </h2>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px',
-        }}>
-          {[
-            {
-              venue: 'IEEE Conference 2024',
-              venueIcon: 'menu_book',
-              title: 'Efficient Routing Protocols in Low-Power IoT Networks',
-              desc: 'A study on minimizing energy consumption in sensor networks using adaptive routing algorithms based on local node density.',
-              role: 'Co-Author',
-            },
-            {
-              venue: 'ArXiv Preprint',
-              venueIcon: 'description',
-              title: 'Comparative Analysis of Vector Database Retrieval Speeds',
-              desc: 'Benchmarking various ANN algorithms across popular vector DBs for RAG applications.',
-              role: 'Primary Author',
-            },
-          ].map((pub, i) => (
-            <div key={i} style={{
-              backgroundColor: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '8px',
-              padding: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              transition: 'border-color 0.25s',
-            }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99,102,241,0.5)'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
-            >
-              <div>
-                <div style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '11px',
-                  color: 'rgba(255,255,255,0.4)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  marginBottom: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>{pub.venueIcon}</span>
-                  {pub.venue}
-                </div>
-                <h4 style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  color: '#ffffff',
-                  margin: '0 0 12px 0',
-                  lineHeight: '1.4',
-                }}>
-                  {pub.title}
-                </h4>
-                <p style={{
-                  color: 'rgba(255,255,255,0.55)',
-                  fontSize: '14px',
-                  lineHeight: '1.6',
-                  margin: 0,
-                }}>
-                  {pub.desc}
-                </p>
-              </div>
-              <div style={{
-                marginTop: '20px',
-                paddingTop: '16px',
-                borderTop: '1px solid rgba(255,255,255,0.08)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-                <span style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '12px',
-                  color: '#6366f1',
-                }}>
-                  {pub.role}
-                </span>
-                <a href="#" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.color = '#6366f1'}
-                  onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}
-                >
-                  <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>open_in_new</span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
     </main>
   )
 }
 
-export default About
+export default About;

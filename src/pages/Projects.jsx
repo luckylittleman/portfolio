@@ -1,58 +1,81 @@
 const backendProjects = [
+  
+  
   {
     icon: 'storage',
-    title: 'Distributed Key-Value Store',
+    title: 'Distributed Key-Value Store (still under development)',
     desc: 'A high-performance, fault-tolerant distributed key-value store implementing the Raft consensus algorithm for leader election and log replication. Optimized for low-latency reads in write-heavy environments.',
     stack: ['Rust', 'gRPC', 'Raft'],
+    github: 'https://github.com/yourusername/distributed-key-value',
   },
+  /*
   {
     icon: 'hub',
     title: 'Microservices Event Bus',
     desc: 'A scalable event-driven architecture relying on Apache Kafka for async communication between Go microservices. Features distributed tracing and automated circuit breaking.',
     stack: ['Go', 'Kafka', 'Docker'],
+    github: 'https://github.com/yourusername/event-bus',
   },
   {
     icon: 'lan',
     title: 'High-Concurrency API Gateway',
     desc: 'A lightweight, highly concurrent API gateway written in C++ handling rate limiting, authentication, and dynamic request routing with minimal overhead.',
     stack: ['C++', 'Redis', 'Nginx'],
+    github: 'https://github.com/yourusername/api-gateway',
   },
   {
     icon: 'query_stats',
     title: 'Distributed Log Analytics Engine',
     desc: 'High-throughput system that processes and indexes terabytes of log data in real-time. Core processing in Rust with a FastAPI query interface.',
     stack: ['Rust', 'FastAPI', 'Kafka'],
+    github: 'https://github.com/yourusername/log-analytics',
   },
   {
     icon: 'model_training',
     title: 'Automated Model Deployment Platform',
     desc: 'ML model registry with artifact versioning and automatic Kubernetes resource provisioning. Reduced deployment time from days to minutes.',
     stack: ['Go', 'Kubernetes', 'MLflow'],
+    github: 'https://github.com/yourusername/model-deployment',
   },
+  */
 ]
 
 const mlProjects = [
+ 
   {
     icon: 'psychology',
-    title: 'Transformer-based Sentiment Analysis',
-    desc: 'Custom Transformer model trained on financial news data to predict market sentiment. Deployed as a scalable inference endpoint optimized via ONNX Runtime.',
-    stack: ['Python', 'PyTorch', 'ONNX'],
+    title: 'Student-Dropout-Predictor',
+    desc: 'A machine learning system designed to predict at risk students in Kenyan universities using academic and financial data. Powered by a custom built Neural engine',
+    stack: ['Python', 'NumPy', 'Pandas','FastAPI'],
+    github: 'https://github.com/luckylittleman/student-dropout-predictor.git',
   },
+   /*
+  
   {
     icon: 'troubleshoot',
     title: 'Real-time Anomaly Detection',
     desc: 'Ensemble model pipeline detecting network intrusions in real-time streaming data. Uses Apache Spark for distributed feature extraction and isolation forests for scoring.',
     stack: ['Spark', 'Scikit-learn', 'Scala'],
+    github: 'https://github.com/yourusername/anomaly-detection',
   },
   {
     icon: 'manage_search',
     title: 'Semantic Search Pipeline',
     desc: 'End-to-end semantic search with fine-tuned transformers. Custom vector quantization reduces index footprint by 40% while maintaining full recall.',
     stack: ['PyTorch', 'Milvus', 'Transformers'],
+    github: 'https://github.com/yourusername/semantic-search',
+  },*/
+  {
+    icon: 'school',
+    title: 'Numpy Net',
+    desc: 'A modular neural network framework built from scratch using Numpy',
+    stack: ['Python', 'NumPy', 'FastAPI'],
+    github: 'https://github.com/luckylittleman/numpy-net',
   },
 ]
 
-function ProjectCard({ icon, title, desc, stack }) {
+// Destructured the 'github' prop here
+function ProjectCard({ icon, title, desc, stack, github }) {
   return (
     <article
       style={{
@@ -109,7 +132,6 @@ function ProjectCard({ icon, title, desc, stack }) {
           fontSize: '15px',
           lineHeight: '1.6',
           flexGrow: 1,
-          marginBottom: '24px',
           margin: 0,
           marginBottom: '24px',
         }}>
@@ -141,23 +163,31 @@ function ProjectCard({ icon, title, desc, stack }) {
             ))}
           </div>
 
-          {/* View Source button */}
-          <a href="#" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '12px',
-            color: '#6366f1',
-            border: '1px solid #6366f1',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            textDecoration: 'none',
-            transition: 'background 0.2s',
-          }}
-            onMouseEnter={e => e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'}
-            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+          {/* Functional View Source Button */}
+          <a 
+            href={github || '#'} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '12px',
+              color: '#6366f1',
+              border: '1px solid #6366f1',
+              padding: '8px 16px',
+              borderRadius: '4px',
+              textDecoration: 'none',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = 'transparent';
+            }}
           >
             <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>code</span>
             View Source
@@ -202,28 +232,28 @@ function Projects() {
 
       {/* Page Header */}
       <header style={{ marginBottom: '80px' }}>
-  <h1 style={{
-    fontFamily: "'Inter', sans-serif",
-    fontSize: 'clamp(32px, 5vw, 48px)',
-    fontWeight: '700',
-    color: '#ffffff',
-    letterSpacing: '-0.02em',
-    margin: 0,
-    marginBottom: '12px',
-  }}>
-    Technical Projects
-  </h1>
-  <p style={{
-    color: 'rgba(255, 255, 255, 0.7)',
-    fontSize: '16px',
-    lineHeight: '1.6',
-    maxWidth: '600px',
-    margin: 0,
-  }}>
-    A selection of backend systems and machine learning models focused on
-    distributed architecture, performance optimization, and scalable inference.
-  </p>
-</header>
+        <h1 style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: 'clamp(32px, 5vw, 48px)',
+          fontWeight: '700',
+          color: '#ffffff',
+          letterSpacing: '-0.02em',
+          margin: 0,
+          marginBottom: '12px',
+        }}>
+          Technical Projects
+        </h1>
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.7)',
+          fontSize: '16px',
+          lineHeight: '1.6',
+          maxWidth: '600px',
+          margin: 0,
+        }}>
+          A selection of backend systems and machine learning models focused on
+          distributed architecture, performance optimization, and scalable inference.
+        </p>
+      </header>
 
       {/* Backend Systems */}
       <section style={{ marginBottom: '100px' }}>
@@ -257,4 +287,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default Projects;

@@ -1,5 +1,4 @@
-
-function Home({onNavigate}) {
+function Home({ onNavigate }) {
   return (
     <main style={{
       maxWidth: '1200px',
@@ -51,12 +50,15 @@ function Home({onNavigate}) {
             maxWidth: '480px',
             margin: 0,
           }}>
-           Hi, I'm Hilary! A full-stack and Machine Learning developer who loves turning complex data into actionable insights. I spend most of my time working on building everything from predictive regression models to modern, responsive web apps. I'm constantly exploring new cloud technologies and looking for the next challenging problem to solve.
+            Hi, I'm Hilary! A full-stack and Machine Learning developer who loves turning complex data
+            into actionable insights. I spend most of my time working on building everything from
+            predictive regression models to modern, responsive web apps. I'm constantly exploring new
+            cloud technologies and looking for the next challenging problem to solve.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             {/* Primary Button */}
-            <button 
+            <button
               onClick={() => onNavigate('Projects')}
               style={{
                 backgroundColor: '#6366f1',
@@ -76,7 +78,6 @@ function Home({onNavigate}) {
                 transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 'translateY(0)',
               }}
-            
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)'
                 e.currentTarget.style.backgroundColor = '#818cf8'
@@ -89,11 +90,12 @@ function Home({onNavigate}) {
               }}
             >
               View Projects
-              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}></span>
+              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
             </button>
 
             {/* Secondary Button */}
-            <button 
+            <button
+              onClick={() => onNavigate('Contact')}
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.03)',
                 color: '#ffffff',
@@ -126,51 +128,28 @@ function Home({onNavigate}) {
           </div>
         </div>
 
-        {/* Abstract graphic */}
+        {/* Profile Picture */}
         <div className="hidden md:flex" style={{
           flex: 1,
+          maxWidth: '360px',
           aspectRatio: '1',
-          maxWidth: '400px',
           position: 'relative',
           alignItems: 'center',
           justifyContent: 'center',
         }}>
           <div style={{
-            position: 'absolute', inset: 0,
+            width: '100%',
+            height: '100%',
             borderRadius: '50%',
+            overflow: 'hidden',
             border: '1px solid rgba(255, 255, 255, 0.1)',
-            animation: 'pulse 3s ease-in-out infinite',
-          }} />
-          <div style={{
-            position: 'absolute', inset: '32px',
-            borderRadius: '50%',
-            border: '1px dashed rgba(99, 102, 241, 0.3)',
-            animation: 'spinSlow 20s linear infinite',
-          }} />
-          <div style={{
-            position: 'absolute', inset: '64px',
-            borderRadius: '50%',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            animation: 'spinSlowRev 15s linear infinite',
-          }} />
-          <div style={{
-            width: '112px', height: '112px',
-            backgroundColor: 'rgba(255, 255, 255, 0.02)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backdropFilter: 'blur(12px)',
-            zIndex: 10,
+            boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(99, 102, 241, 0.15)',
           }}>
-            <span className="material-symbols-outlined" style={{
-              fontSize: '56px',
-              color: '#6366f1',
-              fontVariationSettings: "'FILL' 0",
-            }}>
-              
-            </span>
+            <img
+              src="pictures/profile.jpeg"
+              alt="Hilary Omondi"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
           </div>
         </div>
       </section>
@@ -187,44 +166,66 @@ function Home({onNavigate}) {
           gap: '8px',
           margin: 0,
         }}>
-          <span className="material-symbols-outlined" style={{ color: '#6366f1' }}></span>
+          <span className="material-symbols-outlined" style={{ color: '#6366f1' }}>terminal</span>
           Technical Expertise
         </h2>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '12px',
-        }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[
             {
-              
               title: 'Languages',
-              items: ['Python', 'JavaScript', 'SQL', 'React', 'HTML/CSS', 'Java'],
+              items: [
+                { name: 'Python',      icon: 'devicon',   cls: 'devicon-python-plain colored' },
+                { name: 'JavaScript',  icon: 'devicon',   cls: 'devicon-javascript-plain colored' },
+                { name: 'SQL',         icon: 'material',  sym: 'database' },
+                { name: 'React',       icon: 'devicon',   cls: 'devicon-react-original colored' },
+                { name: 'HTML / CSS',  icon: 'devicon',   cls: 'devicon-html5-plain colored' },
+                { name: 'Java',        icon: 'devicon',   cls: 'devicon-java-plain colored' },
+              ],
             },
             {
-             
               title: 'Backend & Infrastructure',
-              items: ['FastAPI', 'PostgreSQL', 'Docker', 'Kubernetes', 'Django', 'MySQL'],
+              items: [
+                { name: 'FastAPI',     icon: 'devicon',   cls: 'devicon-fastapi-plain colored' },
+                { name: 'PostgreSQL',  icon: 'devicon',   cls: 'devicon-postgresql-plain colored' },
+                { name: 'Docker',      icon: 'devicon',   cls: 'devicon-docker-plain colored' },
+                { name: 'Kubernetes',  icon: 'devicon',   cls: 'devicon-kubernetes-plain colored' },
+                { name: 'Django',      icon: 'devicon',   cls: 'devicon-django-plain colored' },
+                { name: 'MySQL',       icon: 'devicon',   cls: 'devicon-mysql-original colored' },
+              ],
             },
             {
-             
               title: 'Machine Learning',
-              items: ['PyTorch', 'Scikit-learn', 'TensorFlow', 'MLflow', 'Numpy', 'Pandas'],
+              items: [
+                { name: 'PyTorch',     icon: 'devicon',   cls: 'devicon-pytorch-original colored' },
+                { name: 'Scikit-learn',icon: 'devicon',   cls: 'devicon-scikitlearn-plain colored' },
+                { name: 'TensorFlow',  icon: 'devicon',   cls: 'devicon-tensorflow-original colored' },
+                { name: 'MLflow',      icon: 'devicon',   cls: 'devicon-mlflow-original colored' },
+                { name: 'NumPy',       icon: 'devicon',   cls: 'devicon-numpy-original colored' },
+                { name: 'Pandas',      icon: 'devicon',   cls: 'devicon-pandas-original colored' },
+              ],
             },
             {
-              
               title: 'Tools & Environment',
-              items: ['Ubuntu / Linux', 'Git / GitHub', 'SSH Hardening', 'Wireshark', 'Nmap', 'WSL'],
-            }
+              items: [
+                { name: 'Ubuntu / Linux', icon: 'devicon', cls: 'devicon-ubuntu-plain colored' },
+                { name: 'Git / GitHub',   icon: 'devicon', cls: 'devicon-github-original' },
+                { name: 'SSH Hardening',  icon: 'material', sym: 'lock' },
+                { name: 'Wireshark',      icon: 'material', sym: 'network_check' },
+                { name: 'Nmap',           icon: 'material', sym: 'radar' },
+                { name: 'WSL',            icon: 'devicon',  cls: 'devicon-windows8-original colored' },
+              ],
+            },
           ].map((card, i) => (
-            <div key={i} style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '8px',
-              padding: '32px',
-              transition: 'border-color 0.25s',
-            }}
+            <div
+              key={i}
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '8px',
+                padding: '32px',
+                transition: 'border-color 0.25s',
+              }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
             >
@@ -237,21 +238,39 @@ function Home({onNavigate}) {
                 marginBottom: '24px',
                 paddingBottom: '16px',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
+                margin: '0 0 24px 0',
               }}>
-                <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>{card.icon}</span>
                 {card.title}
               </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {card.items.map((item, j) => (
                   <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{
-                      width: '8px', height: '8px', borderRadius: '50%', flexShrink: 0,
-                      backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                    }} />
-                    <span style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '16px' }}>{item}</span>
+                    {/* Devicon */}
+                    {item.icon === 'devicon' && (
+                      <i
+                        className={item.cls}
+                        style={{ fontSize: '20px', flexShrink: 0, width: '20px', textAlign: 'center' }}
+                      />
+                    )}
+                    {/* Material Symbol fallback */}
+                    {item.icon === 'material' && (
+                      <span
+                        className="material-symbols-outlined"
+                        style={{
+                          fontSize: '20px',
+                          flexShrink: 0,
+                          width: '20px',
+                          textAlign: 'center',
+                          color: 'rgba(255,255,255,0.5)',
+                        }}
+                      >
+                        {item.sym}
+                      </span>
+                    )}
+                    <span style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '15px' }}>
+                      {item.name}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -259,8 +278,6 @@ function Home({onNavigate}) {
           ))}
         </div>
       </section>
-
-      
 
       {/* Featured Work */}
       <section style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -275,20 +292,26 @@ function Home({onNavigate}) {
             gap: '8px',
             margin: 0,
           }}>
-            <span className="material-symbols-outlined" style={{ color: '#6366f1' }}></span>
+            <span className="material-symbols-outlined" style={{ color: '#6366f1' }}>work</span>
             Featured Work
           </h2>
-          <span style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '14px',
-            color: 'rgba(255, 255, 255, 0.6)',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-          }}>
+          <span
+            onClick={() => onNavigate('Projects')}
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.6)',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}
+          >
             View All
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}></span>
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
           </span>
         </div>
 
@@ -299,25 +322,26 @@ function Home({onNavigate}) {
         }}>
           {[
             {
-              icon: 'school',
-              title: 'Student Dropout Predictor',
-              desc: 'A custom neural network built from scratch using NumPy to predict student attrition, served via a high-performance FastAPI backend.',
+              title: 'Numpy Net',
+              image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+              desc: 'A modular neural network framework built from scratch using Numpy.',
               stack: ['Python', 'NumPy', 'FastAPI'],
             },
             {
-              icon: 'analytics',
-              title: 'Student Grade Predictor',
-              desc: 'A predictive modeling tool utilizing Multiple Linear Regression to forecast academic performance, achieving a highly accurate R-Squared score of 0.9887.',
-              stack: ['Scikit-learn', 'Regression', 'Pandas'],
+              title: 'E-Commerce Platform',
+              image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+              desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API, secure checkout integration, and a highly responsive dashboard interface.',
+              stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
             },
             {
-              icon: 'web',
               title: 'Modern Developer Portfolio',
+              image: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&w=800&q=80',
               desc: 'A responsive, dark-themed personal portfolio website built to showcase machine learning projects and full-stack development capabilities.',
               stack: ['React', 'Vite', 'Tailwind CSS'],
             },
           ].map((project, i) => (
-            <article key={i}
+            <article
+              key={i}
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.02)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -337,22 +361,17 @@ function Home({onNavigate}) {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              {/* Card image area */}
+              {/* Card image */}
               <div style={{
                 height: '160px',
-                backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                overflow: 'hidden',
               }}>
-                <span className="material-symbols-outlined" style={{
-                  fontSize: '56px',
-                  color: 'rgba(255, 255, 255, 0.15)',
-                  fontVariationSettings: "'FILL' 0",
-                }}>
-                  {project.icon}
-                </span>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
 
               {/* Card body */}
@@ -373,6 +392,7 @@ function Home({onNavigate}) {
                   lineHeight: '1.6',
                   flexGrow: 1,
                   marginBottom: '24px',
+                  marginTop: 0,
                 }}>
                   {project.desc}
                 </p>
