@@ -7,6 +7,7 @@ const backendProjects = [
     desc: 'A high-performance, fault-tolerant distributed key-value store implementing the Raft consensus algorithm for leader election and log replication. Optimized for low-latency reads in write-heavy environments.',
     stack: ['Rust', 'gRPC', 'Raft'],
     github: 'https://github.com/yourusername/distributed-key-value',
+    image:'/distributedkey.jpg'
   },
   /*
   {
@@ -48,6 +49,8 @@ const mlProjects = [
     desc: 'A machine learning system designed to predict at risk students in Kenyan universities using academic and financial data. Powered by a custom built Neural engine',
     stack: ['Python', 'NumPy', 'Pandas','FastAPI'],
     github: 'https://github.com/luckylittleman/student-dropout-predictor.git',
+    image:'/studentdropout.jpg'
+    
   },
    /*
   
@@ -71,11 +74,12 @@ const mlProjects = [
     desc: 'A modular neural network framework built from scratch using Numpy',
     stack: ['Python', 'NumPy', 'FastAPI'],
     github: 'https://github.com/luckylittleman/numpy-net',
+    image:'/numpynet.jpg'
   },
 ]
 
 // Destructured the 'github' prop here
-function ProjectCard({ icon, title, desc, stack, github }) {
+function ProjectCard({ icon, title, desc, stack, github,image }) {
   return (
     <article
       style={{
@@ -105,7 +109,20 @@ function ProjectCard({ icon, title, desc, stack, github }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        overflow:'hidden'
       }}>
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+              }}
+           />
+           ) : (
+        
         <span className="material-symbols-outlined" style={{
           fontSize: '56px',
           color: 'rgba(255, 255, 255, 0.15)',
@@ -113,6 +130,7 @@ function ProjectCard({ icon, title, desc, stack, github }) {
         }}>
           {icon}
         </span>
+           )}
       </div>
 
       {/* Card body */}

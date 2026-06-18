@@ -70,7 +70,7 @@ function Contact() {
             Connect With Me
           </h1>
           <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontFamily: "'Inter', sans-serif", fontSize: '16px', margin: 0, maxWidth: '440px', lineHeight: '1.6' }}>
-            Find me on my digital profiles or reach out through secure communication vectors.
+            Have a project in mind or a role to fill? I’d love to hear from you. Drop your message and I'll get Right back at you
           </p>
         </div>
 
