@@ -23,7 +23,7 @@ function Home({ onNavigate }) {
               boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 40px rgba(99, 102, 241, 0.15)',
             }}>
               <img
-                src="pictures/profile.jpeg"
+                src="/profile.jpeg"
                 alt="Hilary Omondi"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
