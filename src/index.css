@@ -36,3 +36,272 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #2e3637; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #849495; }
+
+/* ─── Navbar responsive ─── */
+.nav-desktop-links {
+  display: flex;
+}
+
+.nav-mobile-hamburger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav-desktop-links {
+    display: none;
+  }
+}
+
+/* ─── Bottom Nav: hidden on desktop, visible on mobile ─── */
+.bottom-nav {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .bottom-nav {
+    display: flex !important;
+  }
+
+  /* Add padding to body so content isn't hidden behind bottom nav */
+  .app-wrapper {
+    padding-bottom: 72px;
+  }
+}
+
+/* ─── About page responsive ─── */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ─── Contact page responsive ─── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+@media (max-width: 767px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── Responsive page padding ─── */
+.page-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 64px;
+}
+
+@media (max-width: 1024px) {
+  .page-main {
+    padding: 60px 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-main {
+    padding: 40px 16px;
+  }
+}
+
+/* ─── Experience timeline responsive ─── */
+.timeline-card-inner {
+  padding: 24px 32px;
+}
+
+@media (max-width: 767px) {
+  .timeline-card-inner {
+    padding: 20px 16px;
+  }
+}
+
+/* ─── Home hero responsive ─── */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 500px;
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+    min-height: auto;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .hero-section p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+/* ─── Desktop profile picture ─── */
+.desktop-profile {
+  display: flex;
+  flex: 1;
+  max-width: 360px;
+  aspect-ratio: 1;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-profile {
+  display: none;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .desktop-profile {
+    display: none;
+  }
+  .mobile-profile {
+    display: flex;
+  }
+}
+
+/* ─── Footer responsive ─── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ─── Tech grid responsive ─── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Projects grid responsive ─── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Featured work grid ─── */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Education grid responsive ─── */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Contact info cards responsive ─── */
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .contact-cards {
+    gap: 12px;
+  }
+}
+
+/* ─── Stats card responsive ─── */
+.stats-card {
+  background-color: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 32px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 767px) {
+  .stats-card {
+    min-width: auto;
+    padding: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .stats-card > div {
+    flex: 1;
+    min-width: 100px;
+  }
+}

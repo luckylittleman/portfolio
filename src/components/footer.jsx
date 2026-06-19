@@ -51,11 +51,7 @@ function Footer({ onNavigate }) {
       }}>
         
         {/* Four-Column Layout Link Matrix */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '40px',
-        }}>
+        <div className="footer-grid">
           
           {/* Column 1: Navigation */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -144,7 +140,7 @@ function Footer({ onNavigate }) {
             }}>
               Email:{' '}
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:hilaryomondi08@gmail.com" 
                 style={{ ...linkStyle, display: 'inline-block' }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -157,14 +153,9 @@ function Footer({ onNavigate }) {
         </div>
 
         {/* Bottom Metadata Border Bar */}
-        <div style={{
+        <div className="footer-bottom" style={{
           borderTop: '1px solid rgba(255, 255, 255, 0.03)',
           paddingTop: '24px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '16px',
         }}>
           <span style={{
             fontFamily: "'Inter', sans-serif",

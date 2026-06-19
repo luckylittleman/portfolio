@@ -1,21 +1,13 @@
 function About() {
   return (
-    <main style={{
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '80px 64px',
+    <main className="page-main" style={{
       display: 'flex',
       flexDirection: 'column',
       gap: '100px',
-    }} className="px-4 md:px-16">
+    }}>
 
       {/* Hero Bio */}
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr auto',
-        gap: '48px',
-        alignItems: 'start',
-      }} className="flex flex-col md:grid">
+      <section className="about-hero-grid">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
           <div>
             <span style={{
@@ -31,7 +23,7 @@ function About() {
             </span>
             <h1 style={{
               fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(32px, 5vw, 48px)',
+              fontSize: 'clamp(28px, 5vw, 48px)',
               fontWeight: '700',
               color: '#ffffff',
               lineHeight: '1.1',
@@ -99,16 +91,7 @@ function About() {
         </div>
 
         {/* Stats Card */}
-        <div style={{
-          backgroundColor: 'rgba(255,255,255,0.03)',
-          border: '1px solid rgba(255,255,255,0.1)',
-          borderRadius: '12px',
-          padding: '32px',
-          minWidth: '220px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px',
-        }}>
+        <div className="stats-card">
           {[
             { label: 'Location', value: 'Kenya' },
             { label: 'Focus', value: 'Backend & ML Engineering' },
@@ -158,11 +141,7 @@ function About() {
           Education
         </h2>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px',
-        }}>
+        <div className="education-grid">
           {[
             {
               period: 'Graduating Nov 2026',
@@ -296,11 +275,10 @@ function About() {
                 boxShadow: job.active ? '0 0 10px rgba(99,102,241,0.4)' : 'none',
               }} />
 
-              <div style={{
+              <div className="timeline-card-inner" style={{
                 backgroundColor: 'rgba(255,255,255,0.03)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '8px',
-                padding: '24px 32px',
                 transition: 'border-color 0.25s',
               }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99,102,241,0.5)'}

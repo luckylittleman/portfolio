@@ -242,17 +242,13 @@ function SectionHeader({ icon, title, color = '#6366f1' }) {
 
 function Projects() {
   return (
-    <main style={{
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '80px 64px',
-    }} className="px-4 md:px-16">
+    <main className="page-main">
 
       {/* Page Header */}
       <header style={{ marginBottom: '80px' }}>
         <h1 style={{
           fontFamily: "'Inter', sans-serif",
-          fontSize: 'clamp(32px, 5vw, 48px)',
+          fontSize: 'clamp(28px, 5vw, 48px)',
           fontWeight: '700',
           color: '#ffffff',
           letterSpacing: '-0.02em',
@@ -276,11 +272,7 @@ function Projects() {
       {/* Backend Systems */}
       <section style={{ marginBottom: '100px' }}>
         <SectionHeader icon="dns" title="Backend Systems" color="#ffffff" />
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px',
-        }}>
+        <div className="projects-grid">
           {backendProjects.map((p, i) => (
             <ProjectCard key={i} {...p} />
           ))}
@@ -290,11 +282,7 @@ function Projects() {
       {/* Machine Learning */}
       <section>
         <SectionHeader icon="memory" title="Machine Learning" color="#ffffff" />
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px',
-        }}>
+        <div className="projects-grid">
           {mlProjects.map((p, i) => (
             <ProjectCard key={i} {...p} />
           ))}

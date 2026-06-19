@@ -7,8 +7,9 @@ function Navbar({ currentPage, onNavigate }) {
 
   return (
     <nav style={{
-      backgroundColor: 'rgba(10, 10, 15)',
+      backgroundColor: 'rgba(10, 10, 15, 0.95)',
       backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
       borderBottom: '1px solid #3b494b',
       position: 'sticky',
       top: 0,
@@ -17,17 +18,15 @@ function Navbar({ currentPage, onNavigate }) {
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '0 64px',
+        padding: '0 24px',
         height: '64px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-      }} className="px-4 md:px-16">
+      }}>
 
-        
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex" style={{ gap: '32px', alignItems: 'center' }}>
+        {/* Desktop Links — hidden on mobile via CSS */}
+        <div className="nav-desktop-links" style={{ gap: '32px', alignItems: 'center' }}>
           {navLinks.map(link => (
             <span
               key={link}
@@ -48,9 +47,9 @@ function Navbar({ currentPage, onNavigate }) {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — visible on mobile via CSS */}
         <button
-          className="md:hidden"
+          className="nav-mobile-hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
           style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#b9cacb' }}
         >
