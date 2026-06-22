@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import BottomNav from './components/BottomNav'
 import Home from './pages/Home'
@@ -10,6 +10,10 @@ import Contact from './pages/Contact'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home')
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [currentPage])
 
   return (
     <div className="app-wrapper">
