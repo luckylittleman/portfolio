@@ -45,10 +45,10 @@ const mlProjects = [
  
   {
     icon: 'psychology',
-    title: 'Student-Dropout-Predictor',
-    desc: 'A machine learning system designed to predict at risk students in Kenyan universities using academic and financial data. Powered by a custom built Neural engine',
+    title: 'Linear-Regression-Model',
+    desc: 'Final-year CS project: Multiple Linear Regression engine for student performance prediction with from-scratch gradient descent, 5-fold CV, XAI risk analysis, and a full-stack React + FastAPI interface.',
     stack: ['Python', 'NumPy', 'Pandas','FastAPI'],
-    github: 'https://github.com/luckylittleman/student-dropout-predictor.git',
+    github: 'https://github.com/luckylittleman/Linear_Regression_Model.git',
     image:'/studentdropout.jpg'
     
   },
