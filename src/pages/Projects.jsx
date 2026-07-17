@@ -3,10 +3,10 @@ const backendProjects = [
   
   {
     icon: 'storage',
-    title: 'Distributed Key-Value Store (still under development)',
-    desc: 'A high-performance, fault-tolerant distributed key-value store implementing the Raft consensus algorithm for leader election and log replication. Optimized for low-latency reads in write-heavy environments.',
-    stack: ['Rust', 'gRPC', 'Raft'],
-    github: 'https://github.com/yourusername/distributed-key-value',
+    title: 'Expense Splitter (still under development)',
+    desc: 'A backend REST API for tracking and splitting shared expenses within groups — think "Splitwise" backend. Built with FastAPI and PostgreSQL, it handles user authentication, group management, expense logging, and automatic debt calculation (who owes who, and how much) across multiple group members.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy','Pydantic'],
+    github: 'https://github.com/luckylittleman/Expense-Splitter.git',
     image:'/distributedkey.jpg'
   },
   /*
