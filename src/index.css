@@ -50,6 +50,10 @@ body {
   .nav-desktop-links {
     display: none;
   }
+
+  .app-wrapper > nav {
+    display: none;
+  }
 }
 
 /* ─── Bottom Nav: hidden on desktop, visible on mobile ─── */
