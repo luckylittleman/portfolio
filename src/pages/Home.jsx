@@ -62,7 +62,8 @@ function Home({ onNavigate }) {
             maxWidth: '480px',
             margin: 0,
           }}>
-            Backend Engineer & Machine Learning Specialist with hands-on experience building scalable API architectures, data pipelines, and production machine learning models. Proficient in Python, F[...]
+            Backend Engineer & Machine Learning Specialist with hands-on experience building scalable API architectures, data pipelines, and production machine learning models. Proficient in Python, FastAPI, Django REST Framework, PostgreSQL, and core ML frameworks like Scikit-learn and PyTorch. Proven ability to construct custom neural network frameworks from scratch, deploy predictive analytics tools, and maintain enterprise network infrastructure. Strong background in Linux environment configuration with a focus on system reliability and data-driven software solutions
+
           </p>
 
           <div className="hero-buttons" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
