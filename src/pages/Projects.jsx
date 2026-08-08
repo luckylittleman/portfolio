@@ -7,7 +7,8 @@ const backendProjects = [
     desc: 'A backend REST API for tracking and splitting shared expenses within groups — think "Splitwise" backend. Built with FastAPI and PostgreSQL, it handles user authentication, group management, expense logging, and automatic debt calculation (who owes who, and how much) across multiple group members.',
     stack: ['Python', 'FastAPI', 'PostgreSQL', 'SQLAlchemy','Pydantic'],
     github: 'https://github.com/luckylittleman/Expense-Splitter.git',
-    image:'/distributedkey.jpg'
+    image:'/distributedkey.jpg',
+    // demo: 'https://your-expense-splitter-demo.com',
   },
   /*
   {
@@ -49,8 +50,8 @@ const mlProjects = [
     desc: 'Final-year CS project: Multiple Linear Regression engine for student performance prediction with from-scratch gradient descent, 5-fold CV, XAI risk analysis, and a full-stack React + FastAPI interface.',
     stack: ['Python', 'NumPy', 'Pandas','FastAPI'],
     github: 'https://github.com/luckylittleman/Linear_Regression_Model.git',
-    image:'/studentdropout.jpg'
-    
+    image:'/studentdropout.jpg',
+    // demo: 'https://your-linear-regression-demo.com',
   },
    /*
   
@@ -74,14 +75,37 @@ const mlProjects = [
     desc: 'A modular neural network framework built from scratch using Numpy',
     stack: ['Python', 'NumPy', 'FastAPI'],
     github: 'https://github.com/luckylittleman/numpy-net',
-    image:'/numpynet.jpg'
+    image:'/numpynet.jpg',
+    // demo: 'https://your-numpy-net-demo.com',
+  },
+]
+
+const fullStackProjects = [
+  {
+    icon: 'shopping_cart',
+    title: 'E-Commerce Platform',
+    desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication, integrated with a React frontend.',
+    stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
+    github: 'https://github.com/luckylittleman',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    // demo: 'https://your-ecommerce-demo.com',
+  },
+  {
+    icon: 'web',
+    title: 'Modern Landing Page',
+    desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI, fast load times and accessible design.',
+    stack: ['React', 'Vite', 'Tailwind CSS'],
+    github: 'https://github.com/luckylittleman',
+    demo: 'https://tunawirihub.org',
+    image: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&w=800&q=80',
   },
 ]
 
 // Destructured the 'github' prop here
-function ProjectCard({ icon, title, desc, stack, github,image }) {
+function ProjectCard({ icon, title, desc, stack, github, image, demo }) {
   return (
     <article
+      className="project-card"
       style={{
         backgroundColor: 'rgba(255, 255, 255, 0.02)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -90,15 +114,17 @@ function ProjectCard({ icon, title, desc, stack, github,image }) {
         display: 'flex',
         flexDirection: 'column',
         cursor: 'pointer',
-        transition: 'border-color 0.25s, box-shadow 0.25s',
+        transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.25s',
       }}
       onMouseEnter={e => {
         e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'
         e.currentTarget.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.2)'
+        e.currentTarget.style.transform = 'translateY(-4px)'
       }}
       onMouseLeave={e => {
         e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
         e.currentTarget.style.boxShadow = 'none'
+        e.currentTarget.style.transform = 'translateY(0)'
       }}
     >
       {/* Card image area */}
@@ -181,35 +207,75 @@ function ProjectCard({ icon, title, desc, stack, github,image }) {
             ))}
           </div>
 
-          {/* Functional View Source Button */}
-          <a 
-            href={github || '#'} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '12px',
-              color: '#6366f1',
-              border: '1px solid #6366f1',
-              padding: '8px 16px',
-              borderRadius: '4px',
-              textDecoration: 'none',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent';
-            }}
-          >
-            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>code</span>
-            View Source
-          </a>
+          {/* Action Buttons Row */}
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            {/* Functional View Source Button */}
+            <a 
+              href={github || '#'} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px',
+                color: '#6366f1',
+                border: '1px solid #6366f1',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent';
+              }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>code</span>
+              View Source
+            </a>
+
+            {/* Check Out Demo Button — only rendered when a demo URL exists */}
+            {demo && (
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: '12px',
+                  color: '#ffffff',
+                  backgroundColor: '#6366f1',
+                  border: '1px solid #6366f1',
+                  padding: '8px 16px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.backgroundColor = '#818cf8';
+                  e.currentTarget.style.borderColor = '#818cf8';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.3)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.backgroundColor = '#6366f1';
+                  e.currentTarget.style.borderColor = '#6366f1';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>open_in_new</span>
+                Check Out Demo
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </article>
@@ -264,7 +330,7 @@ function Projects() {
           maxWidth: '600px',
           margin: 0,
         }}>
-          A selection of backend systems and machine learning models focused on
+          A selection of backend systems, machine learning models, and full-stack applications focused on
           distributed architecture, performance optimization, and scalable inference.
         </p>
       </header>
@@ -280,10 +346,20 @@ function Projects() {
       </section>
 
       {/* Machine Learning */}
-      <section>
+      <section style={{ marginBottom: '100px' }}>
         <SectionHeader icon="memory" title="Machine Learning" color="#ffffff" />
         <div className="projects-grid">
           {mlProjects.map((p, i) => (
+            <ProjectCard key={i} {...p} />
+          ))}
+        </div>
+      </section>
+
+      {/* Full-Stack & Web */}
+      <section>
+        <SectionHeader icon="web" title="Full-Stack & Web" color="#ffffff" />
+        <div className="projects-grid">
+          {fullStackProjects.map((p, i) => (
             <ProjectCard key={i} {...p} />
           ))}
         </div>

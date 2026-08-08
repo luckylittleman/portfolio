@@ -266,6 +266,7 @@ function Home({ onNavigate }) {
 
       {/* Featured Work */}
       
+
 <section style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
     <h2 style={{
@@ -306,21 +307,23 @@ function Home({ onNavigate }) {
       {
         title: 'Numpy Net',
         image: '/numpynet.jpg',
-        desc: 'A modular neural network framework built from scratch without external ML libraries  using Numpy.',
+        desc: 'A modular neural network framework built from scratch without external ML libraries using Numpy.',
         stack: ['Python', 'NumPy', 'FastAPI'],
+        // demo: 'https://your-numpy-net-demo.com',
       },
       {
         title: 'E-Commerce Platform',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication,intergrated with a react frontend.',
+        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication, integrated with a React frontend.',
         stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
+        // demo: 'https://your-ecommerce-demo.com',
       },
       {
-        title: 'Modern landing page',
+        title: 'Modern Landing Page',
         image: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&w=800&q=80',
         desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI, fast load times and accessible design.',
         stack: ['React', 'Vite', 'Tailwind CSS'],
-        link: 'tunawirihub.org',
+        demo: 'https://tunawirihub.org',
       },
     ].map((project, i) => (
       <article
@@ -333,15 +336,17 @@ function Home({ onNavigate }) {
           display: 'flex',
           flexDirection: 'column',
           cursor: 'pointer',
-          transition: 'border-color 0.25s, box-shadow 0.25s',
+          transition: 'border-color 0.25s, box-shadow 0.25s, transform 0.25s',
         }}
         onMouseEnter={e => {
           e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 1)'
           e.currentTarget.style.boxShadow = '0 0 20px rgba(99, 102, 241, 0.2)'
+          e.currentTarget.style.transform = 'translateY(-4px)'
         }}
         onMouseLeave={e => {
           e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
           e.currentTarget.style.boxShadow = 'none'
+          e.currentTarget.style.transform = 'translateY(0)'
         }}
       >
         {/* Card Image */}
@@ -356,37 +361,17 @@ function Home({ onNavigate }) {
         {/* Card Content Body */}
         <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           
-          {/* Header Row: Title + Conditional Link Icon */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-            <h3 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '20px',
-              fontWeight: '600',
-              color: '#ffffff',
-              margin: 0,
-            }}>
-              {project.title}
-            </h3>
-
-            {project.link && (
-              <a
-                href={project.link.startsWith('http') ? project.link : `https://${project.link}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                style={{
-                  color: '#818cf8',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  textDecoration: 'none',
-                }}
-              >
-                <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
-                  open_in_new
-                </span>
-              </a>
-            )}
-          </div>
+          {/* Title */}
+          <h3 style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: '20px',
+            fontWeight: '600',
+            color: '#ffffff',
+            margin: 0,
+            marginBottom: '12px',
+          }}>
+            {project.title}
+          </h3>
 
           {/* Description */}
           <p style={{
@@ -401,7 +386,7 @@ function Home({ onNavigate }) {
           </p>
 
           {/* Tech Stack Tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 'auto', marginBottom: project.demo ? '16px' : '0' }}>
             {project.stack.map((tag, j) => (
               <span key={j} style={{
                 fontFamily: "'JetBrains Mono', monospace",
@@ -416,6 +401,44 @@ function Home({ onNavigate }) {
               </span>
             ))}
           </div>
+
+          {/* Check Out Demo Link — only for projects with a demo URL */}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '12px',
+                color: '#ffffff',
+                backgroundColor: '#6366f1',
+                border: '1px solid #6366f1',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                alignSelf: 'flex-start',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = '#818cf8';
+                e.currentTarget.style.borderColor = '#818cf8';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.3)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = '#6366f1';
+                e.currentTarget.style.borderColor = '#6366f1';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>open_in_new</span>
+              Check Out Demo
+            </a>
+          )}
 
         </div>
       </article>
