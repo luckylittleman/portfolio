@@ -312,7 +312,7 @@ function Home({ onNavigate }) {
       {
         title: 'E-Commerce Platform',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication,inetrgrated with a react frontend.',
+        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication,intergrated with a react frontend.',
         stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
       },
       {
