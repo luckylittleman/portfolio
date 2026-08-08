@@ -208,7 +208,6 @@ function Home({ onNavigate }) {
               items: [
                 { name: 'Ubuntu / Linux', icon: 'devicon', cls: 'devicon-ubuntu-plain colored' },
                 { name: 'Git / GitHub',   icon: 'devicon', cls: 'devicon-github-original' },
-                { name: 'Docker',      icon: 'devicon',   cls: 'devicon-docker-plain colored' },
                 { name: 'Kubernetes',  icon: 'devicon',   cls: 'devicon-kubernetes-plain colored' },
                 { name: 'WSL',            icon: 'devicon',  cls: 'devicon-windows8-original colored' },
               ],
