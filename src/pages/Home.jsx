@@ -314,14 +314,14 @@ function Home({ onNavigate }) {
       {
         title: 'E-Commerce Platform',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication, in[...],
+        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication',
         stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
         // demo: 'https://your-ecommerce-demo.com',
       },
       {
         title: 'Modern Landing Page',
         image: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&w=800&q=80',
-        desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI, fast loa[...],
+        desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI',
         stack: ['React', 'Vite', 'Tailwind CSS'],
         demo: 'https://tunawirihub.org',
       },
