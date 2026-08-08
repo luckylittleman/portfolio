@@ -62,10 +62,7 @@ function Home({ onNavigate }) {
             maxWidth: '480px',
             margin: 0,
           }}>
-            Hi, I'm Hilary! A full-stack and Machine Learning developer who loves turning complex data
-            into actionable insights. I spend most of my time working on building everything from
-            predictive regression models to modern, responsive web apps. I'm constantly exploring new
-            cloud technologies and looking for the next challenging problem to solve.
+            Backend Engineer & Machine Learning Specialist with hands-on experience building scalable API architectures, data pipelines, and production machine learning models. Proficient in Python, FastAPI, Django REST Framework, PostgreSQL, and core ML frameworks like Scikit-learn and PyTorch. Proven ability to construct custom neural network frameworks from scratch, deploy predictive analytics tools, and maintain enterprise network infrastructure. Strong background in Linux environment configuration with a focus on system reliability and data-driven software solutions
           </p>
 
           <div className="hero-buttons" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -309,13 +306,13 @@ function Home({ onNavigate }) {
       {
         title: 'Numpy Net',
         image: '/numpynet.jpg',
-        desc: 'A modular neural network framework built from scratch using Numpy.',
+        desc: 'A modular neural network framework built from scratch without external ML libraries  using Numpy.',
         stack: ['Python', 'NumPy', 'FastAPI'],
       },
       {
         title: 'E-Commerce Platform',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API, secure checkout integration, and a highly responsive dashboard interface.',
+        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication,inetrgrated with a react frontend.',
         stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
       },
       {
