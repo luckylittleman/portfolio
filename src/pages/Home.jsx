@@ -62,7 +62,7 @@ function Home({ onNavigate }) {
             maxWidth: '480px',
             margin: 0,
           }}>
-            Backend Engineer & Machine Learning Specialist with hands-on experience building scalable API architectures, data pipelines, and production machine learning models. Proficient in Python, FastAPI, Django REST Framework, PostgreSQL, and core ML frameworks like Scikit-learn and PyTorch.
+            Backend Engineer & Machine Learning Specialist with hands-on experience building scalable API architectures, data pipelines, and production machine learning models. Proficient in Python, F[...]
           </p>
 
           <div className="hero-buttons" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -208,7 +208,6 @@ function Home({ onNavigate }) {
               items: [
                 { name: 'Ubuntu / Linux', icon: 'devicon', cls: 'devicon-ubuntu-plain colored' },
                 { name: 'Git / GitHub',   icon: 'devicon', cls: 'devicon-github-original' },
-                { name: 'Kubernetes',  icon: 'devicon',   cls: 'devicon-kubernetes-plain colored' },
                 { name: 'WSL',            icon: 'devicon',  cls: 'devicon-windows8-original colored' },
               ],
             },
@@ -313,14 +312,14 @@ function Home({ onNavigate }) {
       {
         title: 'E-Commerce Platform',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication, integrated with a React frontend.',
+        desc: 'A robust, end-to-end full-stack application featuring an asynchronous product catalog API designed using Django REST Framework and PostgreSQL for order processing and authentication, in[...]
         stack: ['React', 'Django', 'PostgreSQL', 'Tailwind'],
         // demo: 'https://your-ecommerce-demo.com',
       },
       {
         title: 'Modern Landing Page',
         image: 'https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&w=800&q=80',
-        desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI, fast load times and accessible design.',
+        desc: 'Designed and deployed a responsive landing page for a non-profit organization focused on driving community engagement. Built with React and Tailwind CSS, prioritizing clean UI, fast loa[...]
         stack: ['React', 'Vite', 'Tailwind CSS'],
         demo: 'https://tunawirihub.org',
       },
