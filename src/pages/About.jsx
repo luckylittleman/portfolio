@@ -239,14 +239,31 @@ function About() {
             {
               role: 'ICT Intern',
               company: 'Kalanet Communications',
-              period: 'Internship Period',
+              logo: '/Kalanet Communications.jpeg',
+              logoBoxWidth: '72px',
+              logoFit: 'cover',
+              period: 'May 2025 - August 2025',
               bullets: [
                 'Gained practical technical hands-on experience working directly inside an Internet Service Provider environment.',
                 'Assisted with core local network administration, hardware troubleshooting, and structural diagnostics.',
                 'Maintained logging records and monitored continuous server up-time architectures.',
               ],
               stack: ['Networking', 'Linux / Ubuntu', 'Infrastructure', 'Troubleshooting'],
-              active: true,
+              active: false,
+            },
+            {
+              role: 'Machine Learning Intern',
+              company: 'AnalystLab Africa',
+              logo: '/AnalystLabAfrica.jpeg',
+              logoBoxWidth: '52px',
+              logoFit: 'contain',
+              period: 'July 2026 - September 2026',
+              bullets: [
+                'Built and evaluated 6+ classification and regression models (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting) across multiple real-world datasets, achieving up to 82.7% classification accuracy and 0.92 R² on regression tasks.',
+                'Deployed a production-ready prediction model via a FastAPI REST API with Pydantic schema validation, serving real-time predictions with sub-second response times',
+              ],
+              stack: ['FastAPI', 'Scikit-Learn', 'Python'],
+              active: false,
             },
             {
               role: 'Full-Stack & ML Developer',
@@ -258,7 +275,7 @@ function About() {
                 'Migrated core local operating configurations completely into a standardized standalone Linux deployment pipeline.',
               ],
               stack: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Tailwind CSS'],
-              active: false,
+              active: true,
             }
           ].map((job, i) => (
             <div key={i} style={{ position: 'relative', marginBottom: '48px' }}>
@@ -292,7 +309,29 @@ function About() {
                   flexWrap: 'wrap',
                   gap: '8px',
                 }}>
-                  <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    {job.logo && (
+                      <div style={{
+                        width: job.logoBoxWidth || '44px',
+                        height: '44px',
+                        flexShrink: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid rgba(255,255,255,0.12)',
+                        borderRadius: '6px',
+                        overflow: 'hidden',
+                      }}>
+                        <img
+                          src={job.logo}
+                          alt={`${job.company} logo`}
+                          onError={e => { e.currentTarget.style.display = 'none' }}
+                          style={{ width: '100%', height: '100%', objectFit: job.logoFit || 'contain' }}
+                        />
+                      </div>
+                    )}
+                    <div>
                     <h3 style={{
                       fontFamily: "'Inter', sans-serif",
                       fontSize: '18px',
@@ -310,6 +349,7 @@ function About() {
                     }}>
                       {job.company}
                     </div>
+                  </div>
                   </div>
                   <span style={{
                     fontFamily: "'JetBrains Mono', monospace",
