@@ -10,14 +10,16 @@ const backendProjects = [
     image:'/distributedkey.jpg',
     demo: ' https://expense-splitter-jje7.onrender.com/docs ',
   },
-  /*
+ 
   {
     icon: 'hub',
-    title: 'Microservices Event Bus',
-    desc: 'A scalable event-driven architecture relying on Apache Kafka for async communication between Go microservices. Features distributed tracing and automated circuit breaking.',
-    stack: ['Go', 'Kafka', 'Docker'],
-    github: 'https://github.com/yourusername/event-bus',
+    title: 'Async-Job-Queue(Still Under Development)',
+    desc: 'A mini task-runner where users submit jobs (e.g. resize an image), a worker picks them up and processes them asynchronously, with retries and status tracking',
+    stack: [],
+    github: 'https://github.com/luckylittleman/Async-Job-Queue.git',
+    image:'/Async.png'
   },
+   /*
   {
     icon: 'lan',
     title: 'High-Concurrency API Gateway',
